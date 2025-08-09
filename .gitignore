@@ -3,3 +3,4 @@ cache_audio/
 __pycache__/
 *.pyc
 .cache/
+temp-clean/
