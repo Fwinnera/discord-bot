@@ -17,13 +17,14 @@ from datetime import datetime, timedelta, timezone
 import io
 import numpy as np
 from aiohttp import web
+import shutil
 
 # =========================
 # Boot / Config
 # =========================
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
-FFMPEG_PATH = "/opt/homebrew/bin/ffmpeg"
+FFMPEG_PATH = os.getenv("FFMPEG_PATH", shutil.which("ffmpeg") or "ffmpeg")
 
 intents = discord.Intents.default()
 intents.message_content = True
